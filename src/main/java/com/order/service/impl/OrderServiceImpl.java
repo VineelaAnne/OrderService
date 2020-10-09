@@ -1,5 +1,6 @@
 package com.order.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -21,6 +22,29 @@ public class OrderServiceImpl implements OrderService{
 			}
 		}
 		return d;
+	}
+
+	@Override
+	public List<String> getOffer(List<String> fruits) {
+		List<String> offers = new ArrayList<String>();
+		int i =0;
+		for(String fruit: fruits) {
+			if(fruit.equals("Apple")) {
+				offers.add("Apple");offers.add("Apple");
+			}
+			if(fruit.equals("Orange")) {
+				i++;
+			}
+			if(i==2) {
+				offers.add("Orange");offers.add("Orange");offers.add("Orange");
+				i=0;
+			}
+		}
+		if(i==2) {
+			offers.add("Orange");offers.add("Orange");offers.add("Orange");
+			i=0;
+		}
+		return offers;
 	}
 	
 	
