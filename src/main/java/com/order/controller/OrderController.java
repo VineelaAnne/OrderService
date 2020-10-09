@@ -18,4 +18,9 @@ public class OrderController {
 	public Double getCost(@RequestBody List<String> fruits) {
 		return orderService.getCost(fruits);
 	}
+	
+	@PostMapping("/getOffer")
+	public List<String> getOffer(@RequestBody List<String> fruits) {
+		return orderService.getOffer(fruits);
+	}
 }
