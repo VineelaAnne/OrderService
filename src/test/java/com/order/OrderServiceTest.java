@@ -33,4 +33,12 @@ public class OrderServiceTest {
 		Double cost = orderService.getCost(fruits);
 		assertTrue(cost.equals(2.05));
 	}
+	
+	@Test
+	public void getOffer() {
+		List<String> fruits = new ArrayList<String>();
+		fruits.add("Apple"); fruits.add("Orange");fruits.add("Orange");
+		fruits = orderService.getOffer(fruits);
+		assertTrue(fruits.size()==5);
+	}
 }
